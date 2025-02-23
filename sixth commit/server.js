@@ -41,7 +41,7 @@ const three = (req, res) => {
 
 app.get('/chain(.html)?', [one, two, three]);
 
-app.get('/*', (req, res) => {
+app.get('/*', (req, res) => { // we can also handle 404 page using app.use instead of app.get('/*)
     res.status(404).sendFile(path.join(__dirname, 'views/404.html'));
 });
 
